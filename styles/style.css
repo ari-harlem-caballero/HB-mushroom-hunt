@@ -162,11 +162,11 @@ footer {
     align-items: center;
 }
 
-.friend .name {
+.friend-name {
     font-size: 1.3rem;
 }
 
-.friend .emoji {
+.friend-face {
     font-size: 3rem;
     line-height: 3rem;
 }

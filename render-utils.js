@@ -11,24 +11,30 @@ export function renderFriend(friend) {
     const friendName = document.createElement('p');
     const friendFace = document.createElement('p');
     // add friend, name, and emoji classes to the appropriate elements
-    friendDiv.classList.add('friends');
+    friendDiv.classList.add('friend');
     friendName.classList.add('friend-name');
     friendFace.classList.add('friend-face');
     // put the friend's name in the nameEl
     friendName.textContent = friend.name;
     
     // for each friend, set the emojiEl's text content to a different emoji depending on their satisfaction level
-    friendFace.textContent = friend.satisfaction < 0 ? 0 : friend.satisfaction;
-    
-    if (friend.satisfaction === 0) {
-        '😩';
-    } if (friend.satisfaction === 1) {
-        '😐';
-    } if (friend.satisfaction === 2) {
-        '😃';
-    } else {
-        '😆';
+
+    if (friend.satisfaction === 1) {
+        friendFace.textContent = '😩';
     }
+
+    if (friend.satisfaction === 2) {
+        friendFace.textContent = '😐';
+    }
+
+    if (friend.satisfaction === 3) {
+        friendFace.textContent = '😃';
+    }
+
+    if (friend.satisfaction >= 4) {
+        friendFace.textContent = '😆';
+    }
+
     // append the emojiEl and nameEl to the outer div
     friendDiv.append(friendName, friendFace);
     // return the outer div
