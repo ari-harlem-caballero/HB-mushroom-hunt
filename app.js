@@ -13,20 +13,20 @@ let mushroomCount = 3;
 
 const friendData = [
     {
-        name: 'Erich',
+        name: 'Nata',
         satisfaction: 2
     },
     {
-        name: 'Sarah',
+        name: 'Mahin',
         satisfaction: 3
     },
     {
-        name: 'Missael',
-        satisfaction: 1
+        name: 'Layla',
+        satisfaction: 4
     },
     {
         name: 'Soraya',
-        satisfaction: 2
+        satisfaction: 1
     },
 ];
 
@@ -56,11 +56,10 @@ addMushroomButton.addEventListener('click', () => {
 
 function displayFriends() {
     // clear out the friends in DOM
-
+    friendsEl.textContent = '';
     // for each friend in state . . .
     for (let friend of friendData) {
         const friendEl = renderFriend(friend);
-
         // this is a clickable list, so . . .
         //     add an event listener to each friend
         //         on click, go find the clicked friend in state
