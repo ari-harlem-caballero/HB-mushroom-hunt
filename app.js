@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
 import { renderMushroom, renderFriend } from './render-utils.js';
-import findFriendByName from './data-utils.js';
+// import findFriendByName from './data-utils.js';
 
 const friendListEl = document.querySelector('.friends');
 const friendInputEl = document.getElementById('friend-input');
@@ -66,21 +66,22 @@ function displayFriends() {
     friendListEl.textContent = '';
     // for each friend in state . . .
     for (let friend of friendData) {
+
         const friendEl = renderFriend(friend);
-        //     add an event listener to each friend
+        //add an event listener to each friend
 
         friendEl.addEventListener('click', () => {
+            //on click, go find the clicked friend in state
+            // friendEl.textContent = friend;
+            //and if the friend's satisfaction level is below 3 and you have mushrooms left
             if (mushroomCount <= 0) {
                 alert('no mushrooms left!');
             } else if (friend.satisfaction >= 4) {
                 alert('too full!');
-            } else 
-            //         on click, go find the clicked friend in state
-            friendEl.textContent = friendData;
-            //         and if the friend's satisfaction level is below 3 and you have mushrooms left
-            if (friendData.satisfaction > 3, mushroomCount < 0) {
-                //             increment the friends satisfaction and decrement your mushrooms
-                friendData.satisfaction++;
+            }
+            if (friend.satisfaction < 4, mushroomCount > 0) {
+                //increment the friends satisfaction and decrement your mushrooms
+                friend.satisfaction++;
                 mushroomCount--;
             }
             //             then display your friends and mushrooms with the updated state
