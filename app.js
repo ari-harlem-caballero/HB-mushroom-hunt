@@ -71,7 +71,6 @@ function displayFriends() {
         //add an event listener to each friend
 
         friendEl.addEventListener('click', () => {
-            console.log(friend);
             //on click, go find the clicked friend in state
             // friendEl.textContent = friend;
             //and if the friend's satisfaction level is below 3 and you have mushrooms left
